@@ -149,9 +149,13 @@ with torch.no_grad():
 
             _,prediction = torch.max(pred,1)
 
+            plt.figure(figsize=(10, 8))
             for ii in range(8):
                 ax = plt.subplot(4,2,ii+1)
                 ax.set_title(f"predicted as {labels[ii]}")
-                plt.imshow(images[ii].reshape(28,28).numpy(),cmap="gray")
+                ax.imshow(images[ii].reshape(28,28).cpu().numpy(),cmap="gray")
+                ax.axis("off")
+
+            plt.tight_layout()
             plt.show()
             break
