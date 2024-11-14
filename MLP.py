@@ -71,7 +71,6 @@ for epoch in range(epochs):
     correct = 0
     n = 0
     accuracy = 0
-    i = 0
     total_loss = 0 
     batch_count = len(train_data)
 
@@ -102,12 +101,6 @@ for epoch in range(epochs):
             pbar.set_description(
                 f"Epoch {epoch + 1}/{epochs} - accuracy: {accuracy:.2f}%, loss: {total_loss / (i + 1):.4f}"
             )
-
-    # Reset tracking variables
-    correct = 0
-    n = 0
-    accuracy = 0
-    total_loss = 0
 
 
 # test
